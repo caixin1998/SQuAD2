@@ -8,7 +8,7 @@
 
 下面给出一个问答的示例：
 
-![img](http://5b0988e595225.cdn.sohucs.com/images/20180113/d816e94898a346b4a6c39466d6f72270.jpeg)
+![img](img\d816e94898a346b4a6c39466d6f72270.jpeg)
 
 #### 利用深度学习模型进行阅读理解
 
@@ -16,7 +16,7 @@
 
 下面给出利用bert进行阅读理解的示例：
 
-![image-20210626203014098](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210626203014098.png)
+![image-20210626203014098](img\image-20210626203014098.png)
 
 
 
@@ -75,11 +75,11 @@ class SquadDataset(data.Dataset):
 
 估计开始概率的示意图如下：
 
-![image-20210626223108817](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210626223108817.png)
+![image-20210626223108817](img\image-20210626223108817.png)
 
 考虑到SQuAD2.0的特性，为了能够判断出问题是否可回答，本实验又在上述模型的基础上添加了一个线性分类器，即用第一个token([SEP])的输出连接一个线性层，得到该问题是否可回答的一个二分类label，模型示意图如下所示：
 
-![image-20210628020711385](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210628020711385.png)
+![image-20210628020711385](img\image-20210628020711385.png)
 
 本实验在 huggingface 提供的BertModel的基础上实现了BertForSQuAD，详见**model.py**.
 
@@ -108,7 +108,7 @@ python train.py --model [bert or xlnet]
 
 下图是BertForSQuAD训练过程中验证集loss（loss function为torch.nn.Crossentropy）和训练集loss的变化过程：
 
-![image-20210627225332113](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210627225332113.png)
+![image-20210627225332113](img\image-20210627225332113.png)
 
 ![image-20210627225343971](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210627225343971.png)
 
